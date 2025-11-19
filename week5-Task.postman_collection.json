@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "4787310a-06e3-4ac2-8e6d-ed222eacf9ba",
+		"name": "week5-Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "49693296",
+		"_collection_link": "https://gyanugnanendra-7398978.postman.co/workspace/Gyanu-Gnanendra's-Workspace~c7c22b6f-e964-4202-874c-b4a390173db7/collection/49693296-4787310a-06e3-4ac2-8e6d-ed222eacf9ba?action=share&source=collection_link&creator=49693296"
+	},
+	"item": [
+		{
+			"name": "Create Company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"companyName\": \"AVK\"\n}"
+				},
+				"url": "http://localhost:8080/api/companies"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/companies/AVK"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Company",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/companies/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Project",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"projectTitle\": \"Employee Management System\"\n}"
+				},
+				"url": "http://localhost:8080/api/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/projects/search?title=emp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"projects",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "emp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employees of Project",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/projects/1/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Employee to Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/projects/1/assign/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Project",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/projects/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"Gnani\",\n    \"address\": {\n        \"street\": \"Kovada Annavaram\",\n        \"city\": \"Bhimavaram\",\n        \"state\": \"Andhra Pradesh\",\n        \"postalCode\": \"534202\"\n    }\n}"
+				},
+				"url": "http://localhost:8080/api/employees"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"Gnani g\",\n    \"address\": {\n        \"street\": \"VRK street\",\n        \"city\": \"Rajmundry\",\n        \"state\": \"Andhra Pradesh\",\n        \"postalCode\": \"534313\"\n    }\n}"
+				},
+				"url": "http://localhost:8080/api/employees/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees (Pagination)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees?page=0&size=10&sort=id,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "id,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees (Simple)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/employees/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Projects of Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/employees/1/projects"
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Project to Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/employees/1/projects/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/search?name=Gnani",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Gnani"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/employees/1"
+			},
+			"response": []
+		}
+	]
+}
